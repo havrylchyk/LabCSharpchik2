@@ -4,6 +4,7 @@ using System;
 using System.Windows.Forms;
 using System.Linq;
 using SchoolTimeTable_Work_with_file_.Core;
+using System.Collections.Generic;
 
 namespace SchoolTimeTable_Work_with_file_
 {
@@ -46,7 +47,11 @@ namespace SchoolTimeTable_Work_with_file_
 
         public void FillDataGridView()
         {
-            TimeTable.DataSource = lessonProcessing.lessons.ToArray();
+            var tablerecorder = new List<TableRecord>();
+            foreach (var lesson in lessonProcessing.lessons)
+                tablerecorder.Add(new TableRecord(lesson, subjectProcessing, groupprocessing));
+            
+            TimeTable.DataSource = tablerecorder.ToArray();
         }
 
         private void Delete_Lesson_btn_Click(object sender, EventArgs e)

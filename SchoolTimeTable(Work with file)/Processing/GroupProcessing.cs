@@ -2,6 +2,8 @@
 using System.IO;
 using SchoolTimeTable_Work_with_file_.Core;
 using System.Text;
+using System;
+using System.Linq;
 
 namespace SchoolTimeTable_Work_with_file_.Processing
 {
@@ -32,6 +34,11 @@ namespace SchoolTimeTable_Work_with_file_.Processing
             }
 
             return Groups;
+        }
+
+        public Group GetByGUID(Guid id)
+        {
+            return Groups.FirstOrDefault(group => group.Id == id);
         }
     }
 }

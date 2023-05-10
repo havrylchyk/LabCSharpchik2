@@ -214,6 +214,7 @@
             this.TimeTable.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.TimeTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TimeTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TimeTable.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.TimeTable.GridColor = System.Drawing.SystemColors.Control;
             this.TimeTable.Location = new System.Drawing.Point(12, 105);
             this.TimeTable.Name = "TimeTable";

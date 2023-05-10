@@ -1,21 +1,24 @@
 ﻿using SchoolTimeTable_Work_with_file_.Core;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace SchoolTimeTable_Work_with_file_.Processing
 {
-    public class TableRecorder
+    public class TableRecord
     {
-        //public int NummerOfLesson { get; set; }
-        //public string SubjectName { get; set; }
-        //public string ClassName { get; set; }
+        [DisplayName("Номер уроку")]
+        public int NummerOfLesson => Lesson.SequenceNumber;
+        public Subject Subject => subjectProcessing.GetByGUID(Lesson.Subject);
+        public Group Group => groupProcessing.GetByGUID(Lesson.Group);
 
-        //public TableRecorder(Lesson lesson, Subject subject, )
-        //{
-            
-        //}
+        private Lesson Lesson { get; set; }
+        private SubjectProcessing subjectProcessing;
+        private GroupProcessing groupProcessing;
+
+        public TableRecord(Lesson lesson, SubjectProcessing subjectProcessing, GroupProcessing groupProcessing)
+        {
+            Lesson = lesson;
+            this.subjectProcessing = subjectProcessing;
+            this.groupProcessing = groupProcessing;
+        }
     }
 }

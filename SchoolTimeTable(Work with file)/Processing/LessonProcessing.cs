@@ -1,6 +1,7 @@
 ﻿using SchoolTimeTable_Work_with_file_.Core;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace SchoolTimeTable_Work_with_file_.Processing
 {
@@ -20,5 +21,9 @@ namespace SchoolTimeTable_Work_with_file_.Processing
             OnAddition?.Invoke();
         }
 
+        public Lesson GetByGUID(Guid id)
+        {
+            return lessons.FirstOrDefault(lesson => lesson.Id == id);
+        }
     }
 }

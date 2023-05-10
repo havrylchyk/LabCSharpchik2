@@ -26,7 +26,6 @@ namespace SchoolTimeTable_Work_with_file_.Processing
                 string[] data = lines[i].Split(',');
                 Subject subjects = new Subject
                 {
-                    Id = int.Parse(data[0]),
                     Name = data[1],
                     Tutor = data[2]
                 };
@@ -34,6 +33,11 @@ namespace SchoolTimeTable_Work_with_file_.Processing
             }
 
             return Subjects;
+        }
+
+        public Subject GetByGUID(Guid id)
+        {
+            return Subjects.FirstOrDefault(subject => subject.Id == id);
         }
     }
 }

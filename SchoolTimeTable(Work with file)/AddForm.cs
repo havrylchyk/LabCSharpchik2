@@ -45,8 +45,8 @@ namespace SchoolTimeTable_Work_with_file_
             lessonProcessing.AddItem(new Lesson
             {
                 SequenceNumber = count,
-                Subject = (Subject)comboBoxSublect.SelectedItem,
-                Group = (Group)comboBoxClass.SelectedItem
+                Subject = ((Subject)comboBoxSublect.SelectedItem).Id,
+                Group = ((Group)comboBoxClass.SelectedItem).Id
             });
 
             //lessonProcessing.lessons = lessonProcessing.Fill_list_with_data();
