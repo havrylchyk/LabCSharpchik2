@@ -38,21 +38,16 @@ namespace SchoolTimeTable_Work_with_file_
         {
            
         }
-
+        private static int count = 1;
         private void Apply_button_Addform_Click(object sender, EventArgs e)
         {
-            int count = 1;
             lessonProcessing.AddItem(new Lesson
             {
                 SequenceNumber = count,
                 Subject = ((Subject)comboBoxSublect.SelectedItem).Id,
                 Group = ((Group)comboBoxClass.SelectedItem).Id
-            });
-
-            //lessonProcessing.lessons = lessonProcessing.Fill_list_with_data();
-            //((Form1)Application.OpenForms["Form1"]).FillDataGridView();
+            });     
             count++;
-           
         }
         private void Closebutton_Click(object sender, EventArgs e) { Close(); }
 

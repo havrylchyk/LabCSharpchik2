@@ -18,9 +18,5 @@ namespace SchoolTimeTable_Work_with_file_.Core
         [Browsable(false)]
         public Guid Group { get; set; }
 
-        //public string ToTxt()
-        //{
-        //    return $"{SequenceNumber},{Subject}";
-        //}
     }
 }

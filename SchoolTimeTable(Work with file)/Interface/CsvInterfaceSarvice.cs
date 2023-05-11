@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SchoolTimeTable_Work_with_file_.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,18 +9,16 @@ namespace SchoolTimeTable_Work_with_file_.Interface
 {
     public class CsvInterfaceSarvice : IFileService
     {
-        public void ReadFile(string filePath)
+        public string Filter { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public List<Lesson> Read(string path)
         {
             throw new NotImplementedException();
         }
 
-        public void WriteFile(string filePath, string content)
+        public void Write(string path, List<Lesson> data)
         {
             throw new NotImplementedException();
         }
-        //public string ShowOpenFileDialog()
-        //{
-        //    throw new NotImplementedException();
-        //}
     }
 }

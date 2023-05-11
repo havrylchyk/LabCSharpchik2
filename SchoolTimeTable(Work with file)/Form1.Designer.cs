@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+            this.menu = new System.Windows.Forms.MenuStrip();
             this.createToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tXTToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.xMLToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,24 +56,24 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewCall = new System.Windows.Forms.DataGridView();
             this.buttonSave = new System.Windows.Forms.Button();
-            this.menuStrip2.SuspendLayout();
+            this.menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TimeTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCall)).BeginInit();
             this.SuspendLayout();
             // 
-            // menuStrip2
+            // menu
             // 
-            this.menuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menu.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.createToolStripMenuItem,
             this.importToolStripMenuItem,
             this.exportToolStripMenuItem,
             this.saveAsToolStripMenuItem});
-            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(807, 28);
-            this.menuStrip2.TabIndex = 1;
-            this.menuStrip2.Text = "Menu";
+            this.menu.Location = new System.Drawing.Point(0, 0);
+            this.menu.Name = "menu";
+            this.menu.Size = new System.Drawing.Size(807, 28);
+            this.menu.TabIndex = 1;
+            this.menu.Text = "Menu";
             // 
             // createToolStripMenuItem
             // 
@@ -126,7 +126,7 @@
             this.jSONToolStripMenuItem,
             this.xLSXToolStripMenuItem});
             this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-            this.importToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
+            this.importToolStripMenuItem.Size = new System.Drawing.Size(68, 26);
             this.importToolStripMenuItem.Text = "Import";
             // 
             // tXTToolStripMenuItem
@@ -144,8 +144,9 @@
             // cSVToolStripMenuItem
             // 
             this.cSVToolStripMenuItem.Name = "cSVToolStripMenuItem";
-            this.cSVToolStripMenuItem.Size = new System.Drawing.Size(127, 26);
+            this.cSVToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.cSVToolStripMenuItem.Text = "CSV";
+            this.cSVToolStripMenuItem.Click += new System.EventHandler(this.cSVToolStripMenuItem_Click);
             // 
             // jSONToolStripMenuItem
             // 
@@ -174,37 +175,39 @@
             this.jSONToolStripMenuItem3,
             this.xLSXToolStripMenuItem3});
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(72, 26);
             this.saveAsToolStripMenuItem.Text = "Save as";
             // 
             // tXTToolStripMenuItem3
             // 
             this.tXTToolStripMenuItem3.Name = "tXTToolStripMenuItem3";
-            this.tXTToolStripMenuItem3.Size = new System.Drawing.Size(127, 26);
+            this.tXTToolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
             this.tXTToolStripMenuItem3.Text = "TXT";
             // 
             // xMLToolStripMenuItem3
             // 
             this.xMLToolStripMenuItem3.Name = "xMLToolStripMenuItem3";
-            this.xMLToolStripMenuItem3.Size = new System.Drawing.Size(127, 26);
+            this.xMLToolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
             this.xMLToolStripMenuItem3.Text = "XML";
             // 
             // cSVToolStripMenuItem3
             // 
             this.cSVToolStripMenuItem3.Name = "cSVToolStripMenuItem3";
-            this.cSVToolStripMenuItem3.Size = new System.Drawing.Size(127, 26);
+            this.cSVToolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
             this.cSVToolStripMenuItem3.Text = "CSV";
+            this.cSVToolStripMenuItem3.Click += new System.EventHandler(this.cSVToolStripMenuItem3_Click);
             // 
             // jSONToolStripMenuItem3
             // 
             this.jSONToolStripMenuItem3.Name = "jSONToolStripMenuItem3";
-            this.jSONToolStripMenuItem3.Size = new System.Drawing.Size(127, 26);
+            this.jSONToolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
             this.jSONToolStripMenuItem3.Text = "JSON";
+            this.jSONToolStripMenuItem3.Click += new System.EventHandler(this.jSONToolStripMenuItem3_Click);
             // 
             // xLSXToolStripMenuItem3
             // 
             this.xLSXToolStripMenuItem3.Name = "xLSXToolStripMenuItem3";
-            this.xLSXToolStripMenuItem3.Size = new System.Drawing.Size(127, 26);
+            this.xLSXToolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
             this.xLSXToolStripMenuItem3.Text = "XLSX";
             // 
             // TimeTable
@@ -231,6 +234,7 @@
             this.Update_TimeTable_btn.TabIndex = 87;
             this.Update_TimeTable_btn.Text = "Редагувати дані";
             this.Update_TimeTable_btn.UseVisualStyleBackColor = true;
+            this.Update_TimeTable_btn.Click += new System.EventHandler(this.Update_TimeTable_btn_Click);
             // 
             // Delete_Lesson_btn
             // 
@@ -307,12 +311,12 @@
             this.Controls.Add(this.Delete_Lesson_btn);
             this.Controls.Add(this.Add_lesson_btn);
             this.Controls.Add(this.TimeTable);
-            this.Controls.Add(this.menuStrip2);
+            this.Controls.Add(this.menu);
             this.Name = "Form1";
             this.Text = "TimeTable";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.menuStrip2.ResumeLayout(false);
-            this.menuStrip2.PerformLayout();
+            this.menu.ResumeLayout(false);
+            this.menu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TimeTable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCall)).EndInit();
             this.ResumeLayout(false);
@@ -321,7 +325,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.MenuStrip menuStrip2;
+        private System.Windows.Forms.MenuStrip menu;
         private System.Windows.Forms.ToolStripMenuItem createToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tXTToolStripMenuItem;

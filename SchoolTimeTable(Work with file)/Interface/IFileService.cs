@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SchoolTimeTable_Work_with_file_.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,8 @@ namespace SchoolTimeTable_Work_with_file_
 {
     public interface IFileService
     {
-        //string ShowOpenFileDialog();
-        void ReadFile(string filePath);
-        void WriteFile(string filePath, string content);
+        List<Lesson> Read(string path);
+        void Write(string path, List<Lesson> data);
+        string Filter { get; set; }
     }
 }
