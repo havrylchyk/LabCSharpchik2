@@ -11,12 +11,16 @@ namespace SchoolTimeTable_Work_with_file_.Core
     public class Lesson 
     {
         [Browsable(false)]
-        public Guid Id { get; } = Guid.NewGuid();
+        public int Id { get; set; }
         public int SequenceNumber { get; set; }
         [Browsable(false)]
-        public Guid Subject { get; set; }
+        public int SubjectId { get; set; }
         [Browsable(false)]
-        public Guid Group { get; set; }
+        public int GroupId { get; set; }
+
+        public Subject Subject { get; set; }
+        
+        public Group Group { get; set; }
 
     }
 }

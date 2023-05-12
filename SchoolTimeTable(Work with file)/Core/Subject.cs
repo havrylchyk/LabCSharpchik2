@@ -8,7 +8,7 @@ namespace SchoolTimeTable_Work_with_file_.Core
 {
     public class Subject
     {
-        public Guid Id { get; } = Guid.NewGuid();
+        public int Id { get; set; } 
         public string Name { get; set; }
         public string Tutor { get; set; }
 

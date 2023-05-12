@@ -38,9 +38,9 @@ namespace SchoolTimeTable_Work_with_file_.Processing
             lessons.Add(lesson);
             OnAddition?.Invoke();
         }
-        public Lesson GetByGUID(Guid id)
-        {
-            return lessons.FirstOrDefault(lesson => lesson.Id == id);
-        }
+        //public Lesson GetByGUID(Guid id)
+        //{
+        //    return lessons.FirstOrDefault(lesson => lesson.Id == id);
+        //}
     }
 }

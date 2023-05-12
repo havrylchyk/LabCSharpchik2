@@ -26,9 +26,10 @@ namespace SchoolTimeTable_Work_with_file_.Processing
                 string[] data = lines[i].Split(',');
                 Group group = new Group
                 {
-                    ClassName = data[0],
-                    NumberOfSstudents = int.Parse(data[1]),
-                    ClassTeacher = data[2]
+                    Id = int.Parse(data[0]),
+                    ClassName = data[1],
+                    NumberOfSstudents = int.Parse(data[2]),
+                    ClassTeacher = data[3]
                 };
                 Groups.Add(group);
             }
@@ -36,9 +37,9 @@ namespace SchoolTimeTable_Work_with_file_.Processing
             return Groups;
         }
 
-        public Group GetByGUID(Guid id)
-        {
-            return Groups.FirstOrDefault(group => group.Id == id);
-        }
+        //public Group GetByGUID(Guid id)
+        //{
+        //    return Groups.FirstOrDefault(group => group.Id == id);
+        //}
     }
 }
