@@ -44,6 +44,14 @@ namespace SchoolTimeTable_Work_with_file_
             addForm.Show();//виводимо вікно форми для додавання
             FillDataGridView();
         }
+        
+        private void Update_TimeTable_btn_Click(object sender, EventArgs e)
+        {
+            UpdataForm updateForm = new UpdataForm(groupprocessing, lessonProcessing, subjectProcessing);
+            //викликаємо метод для отримання даниз з Form1 до UpdateForm
+            //updateForm.GiveDataToForm(transferUpDateObject);
+            updateForm.Show();
+        }
 
         public void FillDataGridView()
         {
@@ -53,11 +61,13 @@ namespace SchoolTimeTable_Work_with_file_
 
             TimeTable.DataSource = tablerecorder.ToArray();
         }
+        
         public void RefreshTable()
         {
             TimeTable.ClearSelection();
             FillDataGridView();
         }
+        
         void saveData()
         {
             var dialog = new SaveFileDialog();
@@ -76,6 +86,7 @@ namespace SchoolTimeTable_Work_with_file_
                 }
             }
         }
+        
         void openData()
         {
             var dialog = new OpenFileDialog();
@@ -84,10 +95,11 @@ namespace SchoolTimeTable_Work_with_file_
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 lessonProcessing.lessons = fileService.Read(dialog.FileName);
-                Refresh();
+                TimeTable.ClearSelection();
             }
             FillDataGridView();
         }
+        
         private void Delete_Lesson_btn_Click(object sender, EventArgs e)
         {
             try
@@ -102,20 +114,13 @@ namespace SchoolTimeTable_Work_with_file_
             }
         }
 
+        ///Запис до файлу
         private void jSONToolStripMenuItem3_Click(object sender, EventArgs e)
         {
             if (!(fileService is JsonInterfaceService))
                 fileService = new JsonInterfaceService();
             saveData();
-        }
-
-        private void Update_TimeTable_btn_Click(object sender, EventArgs e)
-        {
-            UpdataForm updateForm = new UpdataForm(groupprocessing, lessonProcessing, subjectProcessing);
-            //викликаємо метод для отримання даниз з Form1 до UpdateForm
-            //updateForm.GiveDataToForm(transferUpDateObject);
-            updateForm.Show();
-        }
+        }    
 
         private void cSVToolStripMenuItem3_Click(object sender, EventArgs e)
         {
@@ -142,11 +147,12 @@ namespace SchoolTimeTable_Work_with_file_
 
         private void xMLToolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            //if (!(fileService is XmlInterfaceServise))
-            //    fileService = new XmlInterfaceServise();
+            if (!(fileService is XmlInterfaceServise))
+                fileService = new XmlInterfaceServise();
             saveData();
         }
 
+        ///Запис до файлу
         private void jSONToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (!(fileService is JsonInterfaceService))
@@ -168,16 +174,19 @@ namespace SchoolTimeTable_Work_with_file_
             openData();
         }
 
-        private void xMLToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void xLSXToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (!(fileService is XlsxInterfaceService))
                 fileService = new XlsxInterfaceService();
             openData();
         }
+
+        private void xMLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!(fileService is XmlInterfaceServise))
+                fileService = new XmlInterfaceServise();
+            openData();
+        }
+      
     }
 }
