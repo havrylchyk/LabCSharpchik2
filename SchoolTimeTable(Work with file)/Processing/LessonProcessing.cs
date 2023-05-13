@@ -19,9 +19,9 @@ namespace SchoolTimeTable_Work_with_file_.Processing
             recordsToUpdate = records;
         }
 
-        public List<TableRecord> GetData()
+        public List<Lesson> GetData()
         {
-            return recordsToUpdate;
+            return lessons;
         }
 
         public void AddItem(Lesson lesson)

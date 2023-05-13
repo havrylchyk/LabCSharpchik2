@@ -71,7 +71,7 @@
             this.saveAsToolStripMenuItem});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(807, 30);
+            this.menu.Size = new System.Drawing.Size(807, 28);
             this.menu.TabIndex = 1;
             this.menu.Text = "Menu";
             // 
@@ -90,8 +90,9 @@
             // tXTToolStripMenuItem2
             // 
             this.tXTToolStripMenuItem2.Name = "tXTToolStripMenuItem2";
-            this.tXTToolStripMenuItem2.Size = new System.Drawing.Size(127, 26);
+            this.tXTToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
             this.tXTToolStripMenuItem2.Text = "TXT";
+            this.tXTToolStripMenuItem2.Click += new System.EventHandler(this.tXTToolStripMenuItem2_Click);
             // 
             // xMLToolStripMenuItem2
             // 
@@ -304,6 +305,7 @@
             this.buttonSave.TabIndex = 91;
             this.buttonSave.Text = "Зберегти";
             this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // Form1
             // 

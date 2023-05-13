@@ -67,7 +67,7 @@ namespace SchoolTimeTable_Work_with_file_.Interface
 
             try
             {
-                writer = new StreamWriter(path, true, Encoding.UTF8);
+                writer = new StreamWriter(path, false, Encoding.UTF8);
                 foreach (var item in data)
                     writer.WriteLine($"{item.Id};{item.SequenceNumber};" +
                         $"{item.Subject.Id};{item.Subject.Name};{item.Subject.Tutor};" +

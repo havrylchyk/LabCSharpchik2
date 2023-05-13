@@ -63,6 +63,7 @@
             this.Closebutton_Upform.TabIndex = 111;
             this.Closebutton_Upform.Text = "Закрити";
             this.Closebutton_Upform.UseVisualStyleBackColor = true;
+            this.Closebutton_Upform.Click += new System.EventHandler(this.Closebutton_Upform_Click);
             // 
             // Amount_of_Student_textBox_Upform
             // 
