@@ -90,7 +90,7 @@
             // tXTToolStripMenuItem2
             // 
             this.tXTToolStripMenuItem2.Name = "tXTToolStripMenuItem2";
-            this.tXTToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+            this.tXTToolStripMenuItem2.Size = new System.Drawing.Size(127, 26);
             this.tXTToolStripMenuItem2.Text = "TXT";
             this.tXTToolStripMenuItem2.Click += new System.EventHandler(this.tXTToolStripMenuItem2_Click);
             // 
@@ -99,24 +99,28 @@
             this.xMLToolStripMenuItem2.Name = "xMLToolStripMenuItem2";
             this.xMLToolStripMenuItem2.Size = new System.Drawing.Size(127, 26);
             this.xMLToolStripMenuItem2.Text = "XML";
+            this.xMLToolStripMenuItem2.Click += new System.EventHandler(this.xMLToolStripMenuItem2_Click);
             // 
             // cSVToolStripMenuItem2
             // 
             this.cSVToolStripMenuItem2.Name = "cSVToolStripMenuItem2";
             this.cSVToolStripMenuItem2.Size = new System.Drawing.Size(127, 26);
             this.cSVToolStripMenuItem2.Text = "CSV";
+            this.cSVToolStripMenuItem2.Click += new System.EventHandler(this.cSVToolStripMenuItem2_Click);
             // 
             // jSONToolStripMenuItem2
             // 
             this.jSONToolStripMenuItem2.Name = "jSONToolStripMenuItem2";
             this.jSONToolStripMenuItem2.Size = new System.Drawing.Size(127, 26);
             this.jSONToolStripMenuItem2.Text = "JSON";
+            this.jSONToolStripMenuItem2.Click += new System.EventHandler(this.jSONToolStripMenuItem2_Click);
             // 
             // xLSXToolStripMenuItem2
             // 
             this.xLSXToolStripMenuItem2.Name = "xLSXToolStripMenuItem2";
             this.xLSXToolStripMenuItem2.Size = new System.Drawing.Size(127, 26);
             this.xLSXToolStripMenuItem2.Text = "XLSX";
+            this.xLSXToolStripMenuItem2.Click += new System.EventHandler(this.xLSXToolStripMenuItem2_Click);
             // 
             // importToolStripMenuItem
             // 
@@ -127,41 +131,41 @@
             this.jSONToolStripMenuItem,
             this.xLSXToolStripMenuItem});
             this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-            this.importToolStripMenuItem.Size = new System.Drawing.Size(68, 26);
+            this.importToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
             this.importToolStripMenuItem.Text = "Import";
             // 
             // tXTToolStripMenuItem
             // 
             this.tXTToolStripMenuItem.Name = "tXTToolStripMenuItem";
-            this.tXTToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.tXTToolStripMenuItem.Size = new System.Drawing.Size(127, 26);
             this.tXTToolStripMenuItem.Text = "TXT";
             this.tXTToolStripMenuItem.Click += new System.EventHandler(this.tXTToolStripMenuItem_Click);
             // 
             // xMLToolStripMenuItem
             // 
             this.xMLToolStripMenuItem.Name = "xMLToolStripMenuItem";
-            this.xMLToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.xMLToolStripMenuItem.Size = new System.Drawing.Size(127, 26);
             this.xMLToolStripMenuItem.Text = "XML";
             this.xMLToolStripMenuItem.Click += new System.EventHandler(this.xMLToolStripMenuItem_Click);
             // 
             // cSVToolStripMenuItem
             // 
             this.cSVToolStripMenuItem.Name = "cSVToolStripMenuItem";
-            this.cSVToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.cSVToolStripMenuItem.Size = new System.Drawing.Size(127, 26);
             this.cSVToolStripMenuItem.Text = "CSV";
             this.cSVToolStripMenuItem.Click += new System.EventHandler(this.cSVToolStripMenuItem_Click);
             // 
             // jSONToolStripMenuItem
             // 
             this.jSONToolStripMenuItem.Name = "jSONToolStripMenuItem";
-            this.jSONToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.jSONToolStripMenuItem.Size = new System.Drawing.Size(127, 26);
             this.jSONToolStripMenuItem.Text = "JSON";
             this.jSONToolStripMenuItem.Click += new System.EventHandler(this.jSONToolStripMenuItem_Click);
             // 
             // xLSXToolStripMenuItem
             // 
             this.xLSXToolStripMenuItem.Name = "xLSXToolStripMenuItem";
-            this.xLSXToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.xLSXToolStripMenuItem.Size = new System.Drawing.Size(127, 26);
             this.xLSXToolStripMenuItem.Text = "XLSX";
             this.xLSXToolStripMenuItem.Click += new System.EventHandler(this.xLSXToolStripMenuItem_Click);
             // 
@@ -170,6 +174,7 @@
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
             this.exportToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
             this.exportToolStripMenuItem.Text = "Export";
+            this.exportToolStripMenuItem.Click += new System.EventHandler(this.exportToolStripMenuItem_Click);
             // 
             // saveAsToolStripMenuItem
             // 
@@ -186,35 +191,35 @@
             // tXTToolStripMenuItem3
             // 
             this.tXTToolStripMenuItem3.Name = "tXTToolStripMenuItem3";
-            this.tXTToolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
+            this.tXTToolStripMenuItem3.Size = new System.Drawing.Size(127, 26);
             this.tXTToolStripMenuItem3.Text = "TXT";
             this.tXTToolStripMenuItem3.Click += new System.EventHandler(this.tXTToolStripMenuItem3_Click);
             // 
             // xMLToolStripMenuItem3
             // 
             this.xMLToolStripMenuItem3.Name = "xMLToolStripMenuItem3";
-            this.xMLToolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
+            this.xMLToolStripMenuItem3.Size = new System.Drawing.Size(127, 26);
             this.xMLToolStripMenuItem3.Text = "XML";
             this.xMLToolStripMenuItem3.Click += new System.EventHandler(this.xMLToolStripMenuItem3_Click);
             // 
             // cSVToolStripMenuItem3
             // 
             this.cSVToolStripMenuItem3.Name = "cSVToolStripMenuItem3";
-            this.cSVToolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
+            this.cSVToolStripMenuItem3.Size = new System.Drawing.Size(127, 26);
             this.cSVToolStripMenuItem3.Text = "CSV";
             this.cSVToolStripMenuItem3.Click += new System.EventHandler(this.cSVToolStripMenuItem3_Click);
             // 
             // jSONToolStripMenuItem3
             // 
             this.jSONToolStripMenuItem3.Name = "jSONToolStripMenuItem3";
-            this.jSONToolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
+            this.jSONToolStripMenuItem3.Size = new System.Drawing.Size(127, 26);
             this.jSONToolStripMenuItem3.Text = "JSON";
             this.jSONToolStripMenuItem3.Click += new System.EventHandler(this.jSONToolStripMenuItem3_Click);
             // 
             // xLSXToolStripMenuItem3
             // 
             this.xLSXToolStripMenuItem3.Name = "xLSXToolStripMenuItem3";
-            this.xLSXToolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
+            this.xLSXToolStripMenuItem3.Size = new System.Drawing.Size(127, 26);
             this.xLSXToolStripMenuItem3.Text = "XLSX";
             this.xLSXToolStripMenuItem3.Click += new System.EventHandler(this.xLSXToolStripMenuItem3_Click);
             // 
@@ -233,6 +238,7 @@
             this.TimeTable.RowTemplate.Height = 24;
             this.TimeTable.Size = new System.Drawing.Size(455, 248);
             this.TimeTable.TabIndex = 74;
+           
             // 
             // Update_TimeTable_btn
             // 
@@ -323,6 +329,7 @@
             this.Controls.Add(this.menu);
             this.Name = "Form1";
             this.Text = "TimeTable";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();

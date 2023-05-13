@@ -13,7 +13,7 @@ namespace SchoolTimeTable_Work_with_file_.Interface
     {
         public XlsxInterfaceService()
         {
-            Filter = "MS Excel Product file (.xlsx)|*.xlsx";
+            Filter = "MS Excel Lesson file (.xlsx)|*.xlsx";
         }
         public string Filter { get; set; }
 
@@ -25,7 +25,7 @@ namespace SchoolTimeTable_Work_with_file_.Interface
             {
                 ExcelWorksheet worksheet = package.Workbook.Worksheets["Lesson"];
 
-                // отримуємо номер останнього рядка з даними
+                
                 int lastRow = worksheet.Dimension.End.Row;
 
                 for (int row = 1; row <= lastRow; row++)

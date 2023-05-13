@@ -13,7 +13,7 @@ namespace SchoolTimeTable_Work_with_file_.Interface
 
         public XmlInterfaceServise()
         {
-            Filter = "XML Product file (xml)|*.xml";
+            Filter = "XML Lesson file (xml)|*.xml";
         }
         public string Filter { get; set; }
 

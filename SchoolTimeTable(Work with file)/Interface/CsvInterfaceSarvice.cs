@@ -14,7 +14,7 @@ namespace SchoolTimeTable_Work_with_file_.Interface
     {
         public CsvInterfaceSarvice()
         {
-            Filter = "CSV Product file (.csv)|*.csv";
+            Filter = "CSV Lesson file (.csv)|*.csv";
         }
         public string Filter { get; set; }
 

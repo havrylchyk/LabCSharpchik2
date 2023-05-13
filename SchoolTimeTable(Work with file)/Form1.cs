@@ -5,6 +5,8 @@ using System.Windows.Forms;
 using System.Collections.Generic;
 using SchoolTimeTable_Work_with_file_.Core;
 using System.IO;
+using System.Text;
+using System.Xml;
 
 namespace SchoolTimeTable_Work_with_file_
 {
@@ -32,6 +34,8 @@ namespace SchoolTimeTable_Work_with_file_
             lessonProcessing.OnAddition += FillDataGridView;
 
             fileService = new XlsxInterfaceService();
+
+            this.FormClosing += new FormClosingEventHandler(Form1_FormClosing);
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -208,6 +212,87 @@ namespace SchoolTimeTable_Work_with_file_
             }
         }
 
+        private void xMLToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "XML Files (*.xml)|*.xml";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                filepath = saveFileDialog.FileName;
+                using (StreamWriter writer = new StreamWriter(filepath, false))
+                {
+                    if (!(fileService is XmlInterfaceServise))
+                        fileService = new XmlInterfaceServise();
+                }
+
+            }
+        }
+
+        private void cSVToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "CSV Lesson file (.csv)|*.csv";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                filepath = saveFileDialog.FileName;
+                using (StreamWriter writer = new StreamWriter(filepath, false))
+                {
+                    if (!(fileService is CsvInterfaceSarvice))
+                        fileService = new CsvInterfaceSarvice();
+                }
+
+            }
+        }
+
+        private void jSONToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "JSON Lesson file (.json)|*.json";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                filepath = saveFileDialog.FileName;
+                using (StreamWriter writer = new StreamWriter(filepath, false))
+                {
+                    if (!(fileService is JsonInterfaceService))
+                        fileService = new JsonInterfaceService();
+                }
+
+            }
+        }
+
+        private void xLSXToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "MS Excel Lesson file (.xlsx)|*.xlsx";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                filepath = saveFileDialog.FileName;
+                using (StreamWriter writer = new StreamWriter(filepath, false))
+                {
+                    if (!(fileService is XlsxInterfaceService))
+                        fileService = new XlsxInterfaceService();
+                }
+
+            }
+        }
+
+        private void exportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                fileService.Write(filepath, lessonProcessing.lessons);
+                MessageBox.Show("Data Saved");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void buttonSave_Click(object sender, EventArgs e)
         {
             try
@@ -220,5 +305,54 @@ namespace SchoolTimeTable_Work_with_file_
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private bool dataChanged = false;
+
+        // Метод, який буде викликатися при зміні даних у DataGridView
+        private bool unsavedChanges = false;
+
+        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            // Позначаємо, що є незбережені зміни
+            unsavedChanges = true;
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (unsavedChanges)
+            {
+                // Якщо є незбережені зміни, запитуємо користувача про їх збереження
+                var result = MessageBox.Show("Do you want to save changes?", "Unsaved Changes", MessageBoxButtons.YesNoCancel);
+
+                if (result == DialogResult.Cancel)
+                {
+                    // Якщо користувач натиснув "Cancel", відміняємо закриття форми
+                    e.Cancel = true;
+                }
+                else if (result == DialogResult.Yes)
+                {
+                    // Якщо користувач натиснув "Yes", зберігаємо дані та закриваємо форму
+                    saveDataForm();
+                }
+            }
+        }
+
+        
+
+        private void saveDataForm()
+        {
+            // Зберігаємо дані
+            try
+            {
+                fileService.Write(filepath, lessonProcessing.lessons);
+                MessageBox.Show("Data Saved");
+                dataChanged = false; // Позначаємо, що зміни збережені
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        
     }
 }

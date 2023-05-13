@@ -12,7 +12,7 @@ namespace SchoolTimeTable_Work_with_file_.Interface
     {
         public TxtInterfaceServise()
         {
-            Filter = "Product file (.txt)|*.txt";
+            Filter = "Lesson file (.txt)|*.txt";
         }
         public string Filter { get; set; }
 

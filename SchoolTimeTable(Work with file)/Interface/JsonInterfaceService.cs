@@ -9,7 +9,7 @@ namespace SchoolTimeTable_Work_with_file_.Interface
     {
         public JsonInterfaceService()
         {
-            Filter = "JSON Product file (.json)|*.json";
+            Filter = "JSON Lesson file (.json)|*.json";
         }
         public string Filter { get; set; }
         public List<Lesson> Read(string path)
