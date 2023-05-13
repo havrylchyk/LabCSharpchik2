@@ -12,12 +12,8 @@ namespace SchoolTimeTable_Work_with_file_.Processing
         public List<TableRecord> recordsToUpdate;
 
         public event Action OnAddition; // делеагат(поле, яка зберігає ссилку на метод), який визивається при додаванні об'єкта
-
-        public LessonProcessing()
-        {
-
-        }
-
+        
+        public LessonProcessing() { }
         public LessonProcessing(List<TableRecord> records)
         {
             recordsToUpdate = records;
@@ -38,9 +34,5 @@ namespace SchoolTimeTable_Work_with_file_.Processing
             lessons.Add(lesson);
             OnAddition?.Invoke();
         }
-        //public Lesson GetByGUID(Guid id)
-        //{
-        //    return lessons.FirstOrDefault(lesson => lesson.Id == id);
-        //}
     }
 }

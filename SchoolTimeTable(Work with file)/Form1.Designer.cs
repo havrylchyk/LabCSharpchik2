@@ -71,7 +71,7 @@
             this.saveAsToolStripMenuItem});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(807, 28);
+            this.menu.Size = new System.Drawing.Size(807, 30);
             this.menu.TabIndex = 1;
             this.menu.Text = "Menu";
             // 
@@ -132,14 +132,16 @@
             // tXTToolStripMenuItem
             // 
             this.tXTToolStripMenuItem.Name = "tXTToolStripMenuItem";
-            this.tXTToolStripMenuItem.Size = new System.Drawing.Size(127, 26);
+            this.tXTToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.tXTToolStripMenuItem.Text = "TXT";
+            this.tXTToolStripMenuItem.Click += new System.EventHandler(this.tXTToolStripMenuItem_Click);
             // 
             // xMLToolStripMenuItem
             // 
             this.xMLToolStripMenuItem.Name = "xMLToolStripMenuItem";
-            this.xMLToolStripMenuItem.Size = new System.Drawing.Size(127, 26);
+            this.xMLToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.xMLToolStripMenuItem.Text = "XML";
+            this.xMLToolStripMenuItem.Click += new System.EventHandler(this.xMLToolStripMenuItem_Click);
             // 
             // cSVToolStripMenuItem
             // 
@@ -151,14 +153,16 @@
             // jSONToolStripMenuItem
             // 
             this.jSONToolStripMenuItem.Name = "jSONToolStripMenuItem";
-            this.jSONToolStripMenuItem.Size = new System.Drawing.Size(127, 26);
+            this.jSONToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.jSONToolStripMenuItem.Text = "JSON";
+            this.jSONToolStripMenuItem.Click += new System.EventHandler(this.jSONToolStripMenuItem_Click);
             // 
             // xLSXToolStripMenuItem
             // 
             this.xLSXToolStripMenuItem.Name = "xLSXToolStripMenuItem";
-            this.xLSXToolStripMenuItem.Size = new System.Drawing.Size(127, 26);
+            this.xLSXToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.xLSXToolStripMenuItem.Text = "XLSX";
+            this.xLSXToolStripMenuItem.Click += new System.EventHandler(this.xLSXToolStripMenuItem_Click);
             // 
             // exportToolStripMenuItem
             // 
@@ -175,7 +179,7 @@
             this.jSONToolStripMenuItem3,
             this.xLSXToolStripMenuItem3});
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(72, 26);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
             this.saveAsToolStripMenuItem.Text = "Save as";
             // 
             // tXTToolStripMenuItem3
@@ -183,12 +187,14 @@
             this.tXTToolStripMenuItem3.Name = "tXTToolStripMenuItem3";
             this.tXTToolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
             this.tXTToolStripMenuItem3.Text = "TXT";
+            this.tXTToolStripMenuItem3.Click += new System.EventHandler(this.tXTToolStripMenuItem3_Click);
             // 
             // xMLToolStripMenuItem3
             // 
             this.xMLToolStripMenuItem3.Name = "xMLToolStripMenuItem3";
             this.xMLToolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
             this.xMLToolStripMenuItem3.Text = "XML";
+            this.xMLToolStripMenuItem3.Click += new System.EventHandler(this.xMLToolStripMenuItem3_Click);
             // 
             // cSVToolStripMenuItem3
             // 
@@ -209,6 +215,7 @@
             this.xLSXToolStripMenuItem3.Name = "xLSXToolStripMenuItem3";
             this.xLSXToolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
             this.xLSXToolStripMenuItem3.Text = "XLSX";
+            this.xLSXToolStripMenuItem3.Click += new System.EventHandler(this.xLSXToolStripMenuItem3_Click);
             // 
             // TimeTable
             // 
@@ -219,7 +226,7 @@
             this.TimeTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TimeTable.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.TimeTable.GridColor = System.Drawing.SystemColors.Control;
-            this.TimeTable.Location = new System.Drawing.Point(12, 105);
+            this.TimeTable.Location = new System.Drawing.Point(19, 115);
             this.TimeTable.Name = "TimeTable";
             this.TimeTable.RowHeadersWidth = 51;
             this.TimeTable.RowTemplate.Height = 24;
@@ -228,7 +235,7 @@
             // 
             // Update_TimeTable_btn
             // 
-            this.Update_TimeTable_btn.Location = new System.Drawing.Point(314, 370);
+            this.Update_TimeTable_btn.Location = new System.Drawing.Point(321, 380);
             this.Update_TimeTable_btn.Name = "Update_TimeTable_btn";
             this.Update_TimeTable_btn.Size = new System.Drawing.Size(153, 27);
             this.Update_TimeTable_btn.TabIndex = 87;
@@ -238,7 +245,7 @@
             // 
             // Delete_Lesson_btn
             // 
-            this.Delete_Lesson_btn.Location = new System.Drawing.Point(314, 403);
+            this.Delete_Lesson_btn.Location = new System.Drawing.Point(321, 413);
             this.Delete_Lesson_btn.Name = "Delete_Lesson_btn";
             this.Delete_Lesson_btn.Size = new System.Drawing.Size(153, 27);
             this.Delete_Lesson_btn.TabIndex = 86;
@@ -248,7 +255,7 @@
             // 
             // Add_lesson_btn
             // 
-            this.Add_lesson_btn.Location = new System.Drawing.Point(12, 370);
+            this.Add_lesson_btn.Location = new System.Drawing.Point(19, 380);
             this.Add_lesson_btn.Name = "Add_lesson_btn";
             this.Add_lesson_btn.Size = new System.Drawing.Size(153, 27);
             this.Add_lesson_btn.TabIndex = 85;
@@ -260,7 +267,7 @@
             // 
             this.TimeTable_label.AutoSize = true;
             this.TimeTable_label.Font = new System.Drawing.Font("Segoe Print", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TimeTable_label.Location = new System.Drawing.Point(170, 53);
+            this.TimeTable_label.Location = new System.Drawing.Point(177, 63);
             this.TimeTable_label.Name = "TimeTable_label";
             this.TimeTable_label.Size = new System.Drawing.Size(135, 49);
             this.TimeTable_label.TabIndex = 88;
@@ -270,7 +277,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe Print", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(536, 62);
+            this.label1.Location = new System.Drawing.Point(543, 72);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(207, 40);
             this.label1.TabIndex = 89;
@@ -282,7 +289,7 @@
             this.dataGridViewCall.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.dataGridViewCall.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridViewCall.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCall.Location = new System.Drawing.Point(523, 105);
+            this.dataGridViewCall.Location = new System.Drawing.Point(530, 115);
             this.dataGridViewCall.Name = "dataGridViewCall";
             this.dataGridViewCall.RowHeadersWidth = 51;
             this.dataGridViewCall.RowTemplate.Height = 24;
@@ -291,7 +298,7 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(12, 403);
+            this.buttonSave.Location = new System.Drawing.Point(19, 413);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(153, 27);
             this.buttonSave.TabIndex = 91;

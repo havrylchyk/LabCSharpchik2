@@ -2,22 +2,14 @@
 using SchoolTimeTable_Work_with_file_.Processing;
 using System;
 using System.Windows.Forms;
-using System.Linq;
-using SchoolTimeTable_Work_with_file_.Core;
 using System.Collections.Generic;
-using System.Xml;
-using Formatting = Newtonsoft.Json.Formatting;
-using Newtonsoft.Json;
-using System.IO;
-using System.Text.Json;
-using JsonSerializer = Newtonsoft.Json.JsonSerializer;
+using SchoolTimeTable_Work_with_file_.Core;
 
 namespace SchoolTimeTable_Work_with_file_
 {
     public partial class Form1 : Form
     {
         private IFileService fileService;
-        //private List<LessonProcessing> lessons = new List<LessonProcessing>();
 
         public static Form1 Instance;
 
@@ -37,6 +29,8 @@ namespace SchoolTimeTable_Work_with_file_
             callscheduleProcessing = new CallScheduleProcessing();
 
             lessonProcessing.OnAddition += FillDataGridView;
+
+            fileService = new XlsxInterfaceService();
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -82,6 +76,18 @@ namespace SchoolTimeTable_Work_with_file_
                 }
             }
         }
+        void openData()
+        {
+            var dialog = new OpenFileDialog();
+            dialog.Filter = fileService.Filter;
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                lessonProcessing.lessons = fileService.Read(dialog.FileName);
+                Refresh();
+            }
+            FillDataGridView();
+        }
         private void Delete_Lesson_btn_Click(object sender, EventArgs e)
         {
             try
@@ -98,66 +104,9 @@ namespace SchoolTimeTable_Work_with_file_
 
         private void jSONToolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            //using (SaveFileDialog saveFileDialog = new SaveFileDialog())//відкриваємо діалогове вікно
-            //{
-            //    saveFileDialog.Filter = "JSON files (*.json)|*.json";//фільтр для розширень файлів
-            //    saveFileDialog.RestoreDirectory = true;
-
-            //    if (saveFileDialog.ShowDialog() == DialogResult.OK)//коли файл обрано
-            //    {
-            //        var data = lessonProcessing.lessons.ToArray(); // отримуємо дані з DataGridView як масив
-            //        var json = JsonConvert.SerializeObject(data, Formatting.Indented); // серіалізуємо масив у формат JSON
-
-            //        File.WriteAllText(saveFileDialog.FileName, json); // записуємо JSON у файл
-
-            //    }
-            //}
-
             if (!(fileService is JsonInterfaceService))
                 fileService = new JsonInterfaceService();
             saveData();
-        }
-
-        private void cSVToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
-            {
-                saveFileDialog.Filter = "CSV files (*.csv)|*.csv";//фільтр для розширень файлів
-                saveFileDialog.RestoreDirectory = true;
-
-                if (saveFileDialog.ShowDialog() == DialogResult.OK)//коли файл вибрано
-                {
-                    using (StreamWriter streamWriter = new StreamWriter(saveFileDialog.FileName))//відкриваємо потік для запису у файл
-                    {
-                        //for (int i = 0; i < DataScienceSalariesTable.Columns.Count; i++)//цикл для запису заголовків
-                        //{
-                        //    streamWriter.Write(DataScienceSalariesTable.Columns[i].HeaderText);
-                        //    if (i != DataScienceSalariesTable.Columns.Count - 1)//якщо стовпець не останній то ставимо між ними кому
-                        //        streamWriter.Write(",");
-                        //}
-
-                        streamWriter.WriteLine();
-
-                        //for (int i = 0; i < DataScienceSalariesTable.Rows.Count; i++)//записуємо дані з рядків таблиці
-                        //{
-                        //    for (int j = 0; j < DataScienceSalariesTable.Columns.Count; j++)
-                        //    {
-                        //        //записуємо значення з комірки в рядку
-                        //        streamWriter.Write(DataScienceSalariesTable.Rows[i].Cells[j].Value.ToString());
-                        //        if (j != DataScienceSalariesTable.Columns.Count - 1)//якщо стовпець не останній то ставимо між ними кому
-                        //            streamWriter.Write(",");
-                        //    }
-
-                        //    streamWriter.WriteLine();// перехід до наступного рядока
-                        //}
-                    }
-                }
-            }
-        }
-
-        private void cSVToolStripMenuItem3_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void Update_TimeTable_btn_Click(object sender, EventArgs e)
@@ -166,6 +115,69 @@ namespace SchoolTimeTable_Work_with_file_
             //викликаємо метод для отримання даниз з Form1 до UpdateForm
             //updateForm.GiveDataToForm(transferUpDateObject);
             updateForm.Show();
+        }
+
+        private void cSVToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+
+            if (!(fileService is CsvInterfaceSarvice))
+                fileService = new CsvInterfaceSarvice();
+            saveData();
+        }
+
+        private void tXTToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+
+            if (!(fileService is TxtInterfaceServise))
+                fileService = new TxtInterfaceServise();
+            saveData();
+        }
+
+        private void xLSXToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            if (!(fileService is XlsxInterfaceService))
+                fileService = new XlsxInterfaceService();
+            saveData();
+        }
+
+        private void xMLToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            //if (!(fileService is XmlInterfaceServise))
+            //    fileService = new XmlInterfaceServise();
+            saveData();
+        }
+
+        private void jSONToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!(fileService is JsonInterfaceService))
+                fileService = new JsonInterfaceService();
+            openData();
+        }
+
+        private void cSVToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!(fileService is CsvInterfaceSarvice))
+                fileService = new CsvInterfaceSarvice();
+            openData();
+        }
+
+        private void tXTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!(fileService is TxtInterfaceServise))
+                fileService = new TxtInterfaceServise();
+            openData();
+        }
+
+        private void xMLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void xLSXToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!(fileService is XlsxInterfaceService))
+                fileService = new XlsxInterfaceService();
+            openData();
         }
     }
 }

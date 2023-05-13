@@ -14,10 +14,7 @@ namespace SchoolTimeTable_Work_with_file_.Core
         public int Id { get; set; }
         public int SequenceNumber { get; set; }
         [Browsable(false)]
-        public int SubjectId { get; set; }
-        [Browsable(false)]
-        public int GroupId { get; set; }
-
+        
         public Subject Subject { get; set; }
         
         public Group Group { get; set; }

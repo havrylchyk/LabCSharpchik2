@@ -8,9 +8,9 @@ namespace SchoolTimeTable_Work_with_file_.Processing
         [DisplayName("Номер уроку")]//вказуємо назву, яка використовуватимесь у інтерфейсі
         public int NummerOfLesson => Lesson.SequenceNumber;
         [DisplayName("Предмет")]
-        //public Subject Subject => subjectProcessing.GetByGUID(Lesson.Subject);
-        //[DisplayName("Клас")]
-        //public Group Group => groupProcessing.GetByGUID(Lesson.Group);
+        public Subject Subject => Lesson.Subject;
+        [DisplayName("Клас")]
+        public Group Group => Lesson.Group;
 
         private Lesson Lesson { get; set; }
         private SubjectProcessing subjectProcessing;

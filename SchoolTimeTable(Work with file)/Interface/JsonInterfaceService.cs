@@ -14,14 +14,19 @@ namespace SchoolTimeTable_Work_with_file_.Interface
         public string Filter { get; set; }
         public List<Lesson> Read(string path)
         {
-            string json = File.OpenText(path).ReadToEnd();
-            List<Lesson> products = JsonSerializer.Deserialize<List<Lesson>>(json);
-            return products;
+            string json = File.ReadAllText(path);
+            List<Lesson> lessons = JsonSerializer.Deserialize<List<Lesson>>(json);
+            return lessons;
         }
 
         public void Write(string path, List<Lesson> data)
         {
-            string json = JsonSerializer.Serialize(data);
+            var options = new JsonSerializerOptions
+            {
+                WriteIndented = true,
+                Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+            };
+            string json = JsonSerializer.Serialize(data, options);
             File.WriteAllText(path, json);
         }
     }

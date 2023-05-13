@@ -37,9 +37,9 @@ namespace SchoolTimeTable_Work_with_file_.Processing
             return Groups;
         }
 
-        //public Group GetByGUID(Guid id)
-        //{
-        //    return Groups.FirstOrDefault(group => group.Id == id);
-        //}
+        public Group GetGroup(int id)
+        {
+            return Groups.FirstOrDefault(group => group.Id == id);
+        }
     }
 }

@@ -36,9 +36,9 @@ namespace SchoolTimeTable_Work_with_file_.Processing
             return Subjects;
         }
 
-        //public Subject GetByGUID(Guid id)
-        //{
-        //    return Subjects.FirstOrDefault(subject => subject.Id == id);
-        //}
+        public Subject GetSubject(int id)
+        {
+            return Subjects.FirstOrDefault(subject => subject.Id == id);
+        }
     }
 }

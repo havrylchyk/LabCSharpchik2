@@ -88,7 +88,12 @@ namespace SchoolTimeTable_Work_with_file_
             //count++;
         }
 
-      
+        private void UpdataForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
         /*
 * private void Apply_button_Upform_Click(object sender, EventArgs e)
 {

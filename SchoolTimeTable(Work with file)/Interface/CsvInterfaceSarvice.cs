@@ -1,6 +1,9 @@
-﻿using SchoolTimeTable_Work_with_file_.Core;
+﻿using CsvHelper;
+using SchoolTimeTable_Work_with_file_.Core;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,16 +12,28 @@ namespace SchoolTimeTable_Work_with_file_.Interface
 {
     public class CsvInterfaceSarvice : IFileService
     {
-        public string Filter { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public CsvInterfaceSarvice()
+        {
+            Filter = "CSV Product file (.csv)|*.csv";
+        }
+        public string Filter { get; set; }
 
         public List<Lesson> Read(string path)
         {
-            throw new NotImplementedException();
+            using (var reader = new StreamReader(path))
+            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+            {
+                return csv.GetRecords<Lesson>().ToList();
+            }
         }
 
         public void Write(string path, List<Lesson> data)
         {
-            throw new NotImplementedException();
+            using (var writer = new StreamWriter(path))
+            using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
+            {
+                csv.WriteRecords(data);
+            }
         }
     }
 }

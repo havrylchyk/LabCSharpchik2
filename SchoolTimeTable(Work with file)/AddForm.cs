@@ -39,15 +39,18 @@ namespace SchoolTimeTable_Work_with_file_
            
         }
         private static int count = 1;
+        private static int countid = 3000;
         private void Apply_button_Addform_Click(object sender, EventArgs e)
         {
-            //lessonProcessing.AddItem(new Lesson
-            //{
-            //    SequenceNumber = count,
-            //    Subject = ((Subject)comboBoxSublect.SelectedItem).Id,
-            //    Group = ((Group)comboBoxClass.SelectedItem).Id
-            //});     
-            //count++;
+            lessonProcessing.AddItem(new Lesson
+            {
+                Id = countid,
+                SequenceNumber = count,
+                Subject = subjectProcessing.GetSubject(((Subject)comboBoxSublect.SelectedItem).Id),
+                Group = groupProcessing.GetGroup(((Group)comboBoxClass.SelectedItem).Id)
+            });
+            count++;
+            countid++;
         }
         private void Closebutton_Click(object sender, EventArgs e) { Close(); }
 
@@ -64,7 +67,6 @@ namespace SchoolTimeTable_Work_with_file_
             Id_of_Subject_textBox_Addform.Text = selectedsubject.Id.ToString();
             Tutor_textBox_Addform.Text = selectedsubject.Tutor;
         }
-        
     }
 }
 
