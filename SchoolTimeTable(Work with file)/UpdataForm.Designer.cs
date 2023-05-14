@@ -207,6 +207,7 @@
             this.Controls.Add(this.Apply_button_Upform);
             this.Name = "UpdataForm";
             this.Text = "UpdataForm";
+            this.Load += new System.EventHandler(this.UpdataForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

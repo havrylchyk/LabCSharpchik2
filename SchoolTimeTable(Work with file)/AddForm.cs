@@ -51,6 +51,11 @@ namespace SchoolTimeTable_Work_with_file_
             });
             count++;
             countid++;
+            //if (lessonProcessing.lessons.Count != 0)
+            //{
+            //    countid = (lessonProcessing.lessons.LastIndexOf(lessonProcessing.lessons).Id++;
+            //}
+            //else countid = 0;
         }
         private void Closebutton_Click(object sender, EventArgs e) { Close(); }
 

@@ -31,7 +31,9 @@ namespace SchoolTimeTable_Work_with_file_.Processing
         }
         public void UpdataItem(Lesson lesson)
         {
-            lessons.Add(lesson);
+            var updata = lessons.Find(x => x.Id == lesson.Id);
+            updata.Subject = lesson.Subject;
+            updata.Group = lesson.Group;
             OnAddition?.Invoke();
         }
     }

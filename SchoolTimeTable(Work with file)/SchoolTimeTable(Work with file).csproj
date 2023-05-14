@@ -132,7 +132,6 @@
     </Compile>
     <Compile Include="Interface\CsvInterfaceSarvice.cs" />
     <Compile Include="Interface\IFileService.cs" />
-    <Compile Include="Interface\IParseTxt1.cs" />
     <Compile Include="Interface\JsonInterfaceService.cs" />
     <Compile Include="Interface\TxtInterfaceServise.cs" />
     <Compile Include="Interface\XlsxInterfaceService.cs" />

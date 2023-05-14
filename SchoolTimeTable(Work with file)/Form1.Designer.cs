@@ -329,7 +329,6 @@
             this.Controls.Add(this.menu);
             this.Name = "Form1";
             this.Text = "TimeTable";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();

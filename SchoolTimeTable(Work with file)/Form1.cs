@@ -22,6 +22,7 @@ namespace SchoolTimeTable_Work_with_file_
         public SubjectProcessing subjectProcessing;
         public CallScheduleProcessing callscheduleProcessing;
         public CsvInterfaceSarvice csvInterfaceSarvice;
+
         private List<Lesson> lessons = new List<Lesson>();
 
         public Form1()
@@ -37,7 +38,7 @@ namespace SchoolTimeTable_Work_with_file_
 
             fileService = new XlsxInterfaceService();
 
-            this.FormClosing += new FormClosingEventHandler(Form1_FormClosing);
+            //this.FormClosing += new FormClosingEventHandler(Form1_FormClosing);
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -55,16 +56,11 @@ namespace SchoolTimeTable_Work_with_file_
         private void Update_TimeTable_btn_Click(object sender, EventArgs e)
         {
             int index = TimeTable.CurrentRow.Index;
-
-            // Отримайте обраний урок
             Lesson lesson = lessons[index];
-
-            // Створіть UpdataForm та передайте урок до нього
-            UpdataForm updataForm = new UpdataForm(lessons);
+            UpdataForm updataForm = new UpdataForm(lessonProcessing);
             updataForm.GetDataToUpform(lesson);
             updataForm.Show();
         }
-
 
         public void FillDataGridView()
         {
@@ -77,7 +73,6 @@ namespace SchoolTimeTable_Work_with_file_
             // Додайте всі уроки до списку lessons
             lessons = lessonProcessing.lessons.ToList();
         }
-
 
         public void RefreshTable()
         {
@@ -292,6 +287,7 @@ namespace SchoolTimeTable_Work_with_file_
             }
         }
 
+        //Збереження
         private void exportToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -318,53 +314,51 @@ namespace SchoolTimeTable_Work_with_file_
             }
         }
 
-        private bool dataChanged = false;
+        //private bool dataChanged = false;
 
-        // Метод, який буде викликатися при зміні даних у DataGridView
-        private bool unsavedChanges = false;
+        //// Метод, який буде викликатися при зміні даних у DataGridView
+        //private bool unsavedChanges = false;
 
-        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            // Позначаємо, що є незбережені зміни
-            unsavedChanges = true;
-        }
+        //private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    // Позначаємо, що є незбережені зміни
+        //    unsavedChanges = true;
+        //}
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (unsavedChanges)
-            {
-                // Якщо є незбережені зміни, запитуємо користувача про їх збереження
-                var result = MessageBox.Show("Do you want to save changes?", "Unsaved Changes", MessageBoxButtons.YesNoCancel);
+        //private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        //{
+        //    if (unsavedChanges)
+        //    {
+        //        // Якщо є незбережені зміни, запитуємо користувача про їх збереження
+        //        var result = MessageBox.Show("Do you want to save changes?", "Unsaved Changes", MessageBoxButtons.YesNoCancel);
 
-                if (result == DialogResult.Cancel)
-                {
-                    // Якщо користувач натиснув "Cancel", відміняємо закриття форми
-                    e.Cancel = true;
-                }
-                else if (result == DialogResult.Yes)
-                {
-                    // Якщо користувач натиснув "Yes", зберігаємо дані та закриваємо форму
-                    saveDataForm();
-                }
-            }
-        }
+        //        if (result == DialogResult.Cancel)
+        //        {
+        //            // Якщо користувач натиснув "Cancel", відміняємо закриття форми
+        //            e.Cancel = true;
+        //        }
+        //        else if (result == DialogResult.Yes)
+        //        {
+        //            // Якщо користувач натиснув "Yes", зберігаємо дані та закриваємо форму
+        //            saveDataForm();
+        //        }
+        //    }
+        //}
 
-
-
-        private void saveDataForm()
-        {
-            // Зберігаємо дані
-            try
-            {
-                fileService.Write(filepath, lessonProcessing.lessons);
-                MessageBox.Show("Data Saved");
-                dataChanged = false; // Позначаємо, що зміни збережені
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+        //private void saveDataForm()
+        //{
+        //    // Зберігаємо дані
+        //    try
+        //    {
+        //        fileService.Write(filepath, lessonProcessing.lessons);
+        //        MessageBox.Show("Data Saved");
+        //        dataChanged = false; // Позначаємо, що зміни збережені
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //    }
+        //}
 
     }
 }
