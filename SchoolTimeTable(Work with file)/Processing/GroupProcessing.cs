@@ -18,7 +18,7 @@ namespace SchoolTimeTable_Work_with_file_.Processing
         }
         public List<Group> GetInfo()
         {
-            string filePath = "C:\\Users\\Lenovo\\Desktop\\group.txt";
+            string filePath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "Data", "group.txt");
             string[] lines = File.ReadAllLines(filePath, Encoding.GetEncoding("windows-1251"));
 
             for (int i = 1; i < lines.Length; i++)

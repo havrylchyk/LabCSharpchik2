@@ -18,7 +18,7 @@ namespace SchoolTimeTable_Work_with_file_.Processing
         }
         public List<Subject> GetInfo()
         {
-            string filePath = "C:\\Users\\Lenovo\\Desktop\\Subject.txt";
+            string filePath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "Data", "subject.txt");
             string[] lines = File.ReadAllLines(filePath, Encoding.GetEncoding("windows-1251"));
 
             for (int i = 1; i < lines.Length; i++)

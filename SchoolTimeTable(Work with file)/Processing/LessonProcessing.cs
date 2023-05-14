@@ -9,8 +9,6 @@ namespace SchoolTimeTable_Work_with_file_.Processing
     {
         public List<Lesson> lessons = new List<Lesson>();
 
-      
-
         public event Action OnAddition; // делеагат(поле, яка зберігає ссилку на метод), який визивається при додаванні об'єкта
         
         public LessonProcessing() { }
