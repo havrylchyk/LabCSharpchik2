@@ -18,16 +18,36 @@ namespace SchoolTimeTable_Work_with_file_
     public partial class UpdataForm : Form
     {
         private List<TableRecord> recordsToUpdate;
-
+  
         public UpdataForm(List<TableRecord> records)
         {
             InitializeComponent();
             recordsToUpdate = records;
 
         }
+        public UpdataForm()
+        {
+           
+        }
+        private List<Lesson> lessons;
+
+        public UpdataForm(List<Lesson> lessons)
+        {
+            InitializeComponent();
+            this.lessons = lessons;
+        }
         private GroupProcessing groupProcessing;
         private SubjectProcessing subjectProcessing;
         public LessonProcessing lessonProcessing;
+
+        public UpdataForm(List<TableRecord> records, GroupProcessing groupProcessing, LessonProcessing lessonProcessing, SubjectProcessing subjectProcessing)
+        {
+            InitializeComponent();
+            this.recordsToUpdate = records;
+            this.groupProcessing = groupProcessing;
+            this.lessonProcessing = lessonProcessing;
+            this.subjectProcessing = subjectProcessing;
+        }
 
         public UpdataForm(GroupProcessing groupProcessing, LessonProcessing lessonProcessing, SubjectProcessing subjectProcessing)
         {
@@ -65,10 +85,14 @@ namespace SchoolTimeTable_Work_with_file_
             Tutor_textBox_Upform.Text = selectedsubject.Tutor;
         }
 
-        public void GetDataToUpform(List<TableRecord> recordstoupdate)
+
+        public void GetDataToUpform(Lesson lesson)
         {
-            
+            SequenceNumtextBox_Upform.Text = lesson.SequenceNumber.ToString();
+            comboBoxSubject_Upform.SelectedItem = lesson.Subject;
+            comboBoxClass_Upform.SelectedItem = lesson.Group;
         }
+
         private void Apply_button_Upform_Click(object sender, EventArgs e)
         {
 

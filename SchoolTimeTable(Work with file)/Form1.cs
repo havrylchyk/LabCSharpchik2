@@ -7,6 +7,7 @@ using SchoolTimeTable_Work_with_file_.Core;
 using System.IO;
 using System.Text;
 using System.Xml;
+using System.Linq;
 
 namespace SchoolTimeTable_Work_with_file_
 {
@@ -21,6 +22,7 @@ namespace SchoolTimeTable_Work_with_file_
         public SubjectProcessing subjectProcessing;
         public CallScheduleProcessing callscheduleProcessing;
         public CsvInterfaceSarvice csvInterfaceSarvice;
+        private List<Lesson> lessons = new List<Lesson>();
 
         public Form1()
         {
@@ -52,11 +54,17 @@ namespace SchoolTimeTable_Work_with_file_
 
         private void Update_TimeTable_btn_Click(object sender, EventArgs e)
         {
-            //var data = lessonProcessing.GetData();
-            //UpdataForm updataForm = new UpdataForm(data);
-            //updataForm.Show();
-            //FillDataGridView();
+            int index = TimeTable.CurrentRow.Index;
+
+            // Отримайте обраний урок
+            Lesson lesson = lessons[index];
+
+            // Створіть UpdataForm та передайте урок до нього
+            UpdataForm updataForm = new UpdataForm(lessons);
+            updataForm.GetDataToUpform(lesson);
+            updataForm.Show();
         }
+
 
         public void FillDataGridView()
         {
@@ -65,7 +73,11 @@ namespace SchoolTimeTable_Work_with_file_
                 tablerecorder.Add(new TableRecord(lesson, subjectProcessing, groupprocessing));
 
             TimeTable.DataSource = tablerecorder.ToArray();
+            
+            // Додайте всі уроки до списку lessons
+            lessons = lessonProcessing.lessons.ToList();
         }
+
 
         public void RefreshTable()
         {
@@ -337,7 +349,7 @@ namespace SchoolTimeTable_Work_with_file_
             }
         }
 
-        
+
 
         private void saveDataForm()
         {
@@ -353,6 +365,6 @@ namespace SchoolTimeTable_Work_with_file_
                 MessageBox.Show(ex.Message);
             }
         }
-        
+
     }
 }

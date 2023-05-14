@@ -49,7 +49,7 @@
             // Lesson_number_label
             // 
             this.Lesson_number_label.AutoSize = true;
-            this.Lesson_number_label.Location = new System.Drawing.Point(17, 19);
+            this.Lesson_number_label.Location = new System.Drawing.Point(12, 20);
             this.Lesson_number_label.Name = "Lesson_number_label";
             this.Lesson_number_label.Size = new System.Drawing.Size(105, 16);
             this.Lesson_number_label.TabIndex = 112;
@@ -90,6 +90,7 @@
             // 
             this.Id_of_Subject_textBox_Upform.Location = new System.Drawing.Point(108, 118);
             this.Id_of_Subject_textBox_Upform.Name = "Id_of_Subject_textBox_Upform";
+            this.Id_of_Subject_textBox_Upform.ReadOnly = true;
             this.Id_of_Subject_textBox_Upform.Size = new System.Drawing.Size(232, 22);
             this.Id_of_Subject_textBox_Upform.TabIndex = 106;
             // 
