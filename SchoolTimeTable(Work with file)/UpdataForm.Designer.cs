@@ -173,6 +173,7 @@
             this.comboBoxSubject_Upform.Name = "comboBoxSubject_Upform";
             this.comboBoxSubject_Upform.Size = new System.Drawing.Size(201, 24);
             this.comboBoxSubject_Upform.TabIndex = 116;
+            this.comboBoxSubject_Upform.SelectedIndexChanged += new System.EventHandler(this.comboBoxSubject_Upform_SelectedIndexChanged);
             // 
             // comboBoxClass_Upform
             // 
@@ -181,6 +182,7 @@
             this.comboBoxClass_Upform.Name = "comboBoxClass_Upform";
             this.comboBoxClass_Upform.Size = new System.Drawing.Size(298, 24);
             this.comboBoxClass_Upform.TabIndex = 117;
+            this.comboBoxClass_Upform.SelectedIndexChanged += new System.EventHandler(this.comboBoxClass_Upform_SelectedIndexChanged);
             // 
             // UpdataForm
             // 
@@ -205,7 +207,6 @@
             this.Controls.Add(this.Apply_button_Upform);
             this.Name = "UpdataForm";
             this.Text = "UpdataForm";
-            this.Load += new System.EventHandler(this.UpdataForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
