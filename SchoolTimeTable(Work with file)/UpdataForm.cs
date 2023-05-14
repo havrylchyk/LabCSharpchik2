@@ -17,7 +17,6 @@ namespace SchoolTimeTable_Work_with_file_
 
     public partial class UpdataForm : Form
     {
-        private List<TableRecord> recordsToUpdate;
         private Lesson lesson;
 
         List<Group> groups = new List<Group>();

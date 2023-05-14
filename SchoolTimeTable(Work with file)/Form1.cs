@@ -287,7 +287,7 @@ namespace SchoolTimeTable_Work_with_file_
             }
         }
 
-        //Збереження
+        ///Збереження
         private void exportToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -313,52 +313,6 @@ namespace SchoolTimeTable_Work_with_file_
                 MessageBox.Show(ex.Message);
             }
         }
-
-        //private bool dataChanged = false;
-
-        //// Метод, який буде викликатися при зміні даних у DataGridView
-        //private bool unsavedChanges = false;
-
-        //private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    // Позначаємо, що є незбережені зміни
-        //    unsavedChanges = true;
-        //}
-
-        //private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        //{
-        //    if (unsavedChanges)
-        //    {
-        //        // Якщо є незбережені зміни, запитуємо користувача про їх збереження
-        //        var result = MessageBox.Show("Do you want to save changes?", "Unsaved Changes", MessageBoxButtons.YesNoCancel);
-
-        //        if (result == DialogResult.Cancel)
-        //        {
-        //            // Якщо користувач натиснув "Cancel", відміняємо закриття форми
-        //            e.Cancel = true;
-        //        }
-        //        else if (result == DialogResult.Yes)
-        //        {
-        //            // Якщо користувач натиснув "Yes", зберігаємо дані та закриваємо форму
-        //            saveDataForm();
-        //        }
-        //    }
-        //}
-
-        //private void saveDataForm()
-        //{
-        //    // Зберігаємо дані
-        //    try
-        //    {
-        //        fileService.Write(filepath, lessonProcessing.lessons);
-        //        MessageBox.Show("Data Saved");
-        //        dataChanged = false; // Позначаємо, що зміни збережені
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //    }
-        //}
 
     }
 }
