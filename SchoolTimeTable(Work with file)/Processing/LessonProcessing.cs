@@ -9,7 +9,7 @@ namespace SchoolTimeTable_Work_with_file_.Processing
     {
         public List<Lesson> lessons = new List<Lesson>();
 
-        public List<TableRecord> recordsToUpdate;
+      
 
         public event Action OnAddition; // делеагат(поле, яка зберігає ссилку на метод), який визивається при додаванні об'єкта
         
