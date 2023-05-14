@@ -16,7 +16,7 @@ namespace SchoolTimeTable_Work_with_file_.Processing
         }
         public List<CallSchedule> GetInfo()
         {
-            string filePath = "C:\\Users\\Lenovo\\Desktop\\callschedule.txt";
+            string filePath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "Data", "callschedule.txt");
             string[] lines = File.ReadAllLines(filePath, Encoding.GetEncoding("windows-1251"));
 
             for (int i = 1; i < lines.Length; i++)
